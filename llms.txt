@@ -1,0 +1,20 @@
+# VNTU Agency — llms.txt
+# https://vntu-events.com
+
+> Bespoke event production agency based in London, UK. Founded by Rebekah Dennis — 9+ years experience across B2B conferences, brand activations, networking dinners and community events.
+
+## Key Pages
+- Homepage: https://vntu-events.com
+- Services: https://vntu-events.com/services.html
+- Case Studies: https://vntu-events.com/case-studies.html
+- About: https://vntu-events.com/about.html
+- Contact: https://vntu-events.com/contact.html
+
+## Case Studies
+- Global Tech Summit (B2B Conference): https://vntu-events.com/case-studies/global-tech-summit.html
+- Venue Director & Community Engagement: https://vntu-events.com/case-studies/venue-director.html
+
+## Contact
+- Email: rebekah@vntu-events.com
+- Phone: +447572680442
+- Location: London, UK
