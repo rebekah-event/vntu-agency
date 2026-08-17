@@ -217,22 +217,107 @@
   <div class="container">
     <span class="eyebrow">Client Testimonials</span>
     <h2 style="margin-bottom:56px;">What clients say.</h2>
-    <div class="testimonials__grid">
-      <div class="testimonial-card">
-        <p class="testimonial-card__quote">"Work ethic second to none. Her ability to deal with conflicting priorities in high-pressure situations ensured the completion of all work given."</p>
-        <span class="testimonial-card__attr">Head of Delegate Sales — Financial Times</span>
+
+    <div class="testimonial-carousel" style="position:relative;overflow:hidden;">
+
+      <!-- Track -->
+      <div class="tc-track" style="display:flex;transition:transform 0.5s ease;">
+
+        <div class="tc-slide" style="min-width:100%;padding:0 120px;box-sizing:border-box;">
+          <div style="border:1px solid var(--grey-dark);border-radius:4px;padding:56px;position:relative;">
+            <span style="font-family:var(--font-heading);font-size:80px;color:var(--teal);line-height:1;position:absolute;top:16px;left:32px;opacity:0.2;">&#8220;</span>
+            <p style="font-family:var(--font-body);font-size:20px;font-style:italic;line-height:1.7;color:var(--white);margin-bottom:32px;padding-top:24px;">"Work ethic second to none. Her ability to deal with conflicting priorities in high-pressure situations ensured the completion of all work given."</p>
+            <span style="font-family:var(--font-ui);font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--teal);">Head of Delegate Sales &mdash; Financial Times</span>
+          </div>
+        </div>
+
+        <div class="tc-slide" style="min-width:100%;padding:0 120px;box-sizing:border-box;">
+          <div style="border:1px solid var(--grey-dark);border-radius:4px;padding:56px;position:relative;">
+            <span style="font-family:var(--font-heading);font-size:80px;color:var(--teal);line-height:1;position:absolute;top:16px;left:32px;opacity:0.2;">&#8220;</span>
+            <p style="font-family:var(--font-body);font-size:20px;font-style:italic;line-height:1.7;color:var(--white);margin-bottom:32px;padding-top:24px;">"Rebekah made a significant impact on the success of these events and was recognised for them internally."</p>
+            <span style="font-family:var(--font-ui);font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--teal);">Senior VIP Executive &mdash; Informa Markets</span>
+          </div>
+        </div>
+
+        <div class="tc-slide" style="min-width:100%;padding:0 120px;box-sizing:border-box;">
+          <div style="border:1px solid var(--grey-dark);border-radius:4px;padding:56px;position:relative;">
+            <span style="font-family:var(--font-heading);font-size:80px;color:var(--teal);line-height:1;position:absolute;top:16px;left:32px;opacity:0.2;">&#8220;</span>
+            <p style="font-family:var(--font-body);font-size:20px;font-style:italic;line-height:1.7;color:var(--white);margin-bottom:32px;padding-top:24px;">"A remarkable individual who adds immense value to any space she steps into."</p>
+            <span style="font-family:var(--font-ui);font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--teal);">Senior Relationship Manager &mdash; Evenco International</span>
+          </div>
+        </div>
+
+        <div class="tc-slide" style="min-width:100%;padding:0 120px;box-sizing:border-box;">
+          <div style="border:1px solid var(--grey-dark);border-radius:4px;padding:56px;position:relative;">
+            <span style="font-family:var(--font-heading);font-size:80px;color:var(--teal);line-height:1;position:absolute;top:16px;left:32px;opacity:0.2;">&#8220;</span>
+            <p style="font-family:var(--font-body);font-size:20px;font-style:italic;line-height:1.7;color:var(--white);margin-bottom:32px;padding-top:24px;">"In terms of any feedback it&#39;s only positive, you work through things in a really methodical way."</p>
+            <span style="font-family:var(--font-ui);font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--teal);">Head of Events &mdash; R3, The Association of Business Recovery</span>
+          </div>
+        </div>
+
+      </div><!-- end track -->
+
+      <!-- Prev / Next -->
+      <button onclick="tcPrev()" aria-label="Previous" style="position:absolute;left:0;top:50%;transform:translateY(-50%);background:var(--grey-dark);border:1px solid var(--grey-dark);color:var(--white);width:48px;height:48px;border-radius:4px;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s;" onmouseover="this.style.background='var(--teal)';this.style.color='var(--black)'" onmouseout="this.style.background='var(--grey-dark)';this.style.color='var(--white)'">&#8592;</button>
+      <button onclick="tcNext()" aria-label="Next" style="position:absolute;right:0;top:50%;transform:translateY(-50%);background:var(--grey-dark);border:1px solid var(--grey-dark);color:var(--white);width:48px;height:48px;border-radius:4px;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s;" onmouseover="this.style.background='var(--teal)';this.style.color='var(--black)'" onmouseout="this.style.background='var(--grey-dark)';this.style.color='var(--white)'">&#8594;</button>
+
+      <!-- Dots -->
+      <div style="display:flex;justify-content:center;gap:8px;margin-top:32px;" id="tc-dots">
+        <button class="tc-dot" onclick="tcGoTo(0)" style="width:8px;height:8px;border-radius:50%;background:var(--teal);border:none;cursor:pointer;padding:0;"></button>
+        <button class="tc-dot" onclick="tcGoTo(1)" style="width:8px;height:8px;border-radius:50%;background:var(--grey-dark);border:none;cursor:pointer;padding:0;"></button>
+        <button class="tc-dot" onclick="tcGoTo(2)" style="width:8px;height:8px;border-radius:50%;background:var(--grey-dark);border:none;cursor:pointer;padding:0;"></button>
+        <button class="tc-dot" onclick="tcGoTo(3)" style="width:8px;height:8px;border-radius:50%;background:var(--grey-dark);border:none;cursor:pointer;padding:0;"></button>
       </div>
-      <div class="testimonial-card">
-        <p class="testimonial-card__quote">"Rebekah made a significant impact on the success of these events and was recognised for them internally."</p>
-        <span class="testimonial-card__attr">Senior VIP Executive — Informa Markets</span>
-      </div>
-      <div class="testimonial-card">
-        <p class="testimonial-card__quote">"A remarkable individual who adds immense value to any space she steps into."</p>
-        <span class="testimonial-card__attr">Senior Relationship Manager — Evenco International</span>
-      </div>
-    </div>
+
+    </div><!-- end carousel -->
   </div>
 </section>
+
+<script>
+(function() {
+  var current = 0;
+  var total = 4;
+  var autoTimer;
+
+  function update() {
+    var track = document.querySelector('.tc-track');
+    if (track) track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    var dots = document.querySelectorAll('.tc-dot');
+    dots.forEach(function(d, i) {
+      d.style.background = i === current ? 'var(--teal)' : 'var(--grey-dark)';
+      d.style.width = i === current ? '24px' : '8px';
+      d.style.borderRadius = '4px';
+      d.style.transition = 'all 0.3s';
+    });
+  }
+
+  window.tcNext = function() {
+    current = (current + 1) % total;
+    update();
+    resetTimer();
+  };
+  window.tcPrev = function() {
+    current = (current - 1 + total) % total;
+    update();
+    resetTimer();
+  };
+  window.tcGoTo = function(i) {
+    current = i;
+    update();
+    resetTimer();
+  };
+
+  function resetTimer() {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(window.tcNext, 5000);
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    update();
+    resetTimer();
+  });
+})();
+</script>
 
 <!-- OUR PROCESS -->
 <section class="section section--border-top">
