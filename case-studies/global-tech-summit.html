@@ -66,24 +66,83 @@
   <div class="container">
 <!-- HOVER VIDEO -->
 <div style="display:flex;flex-direction:column;align-items:center;margin-top:48px;margin-bottom:8px;">
-  <div style="width:340px;position:relative;border-radius:4px;overflow:hidden;cursor:pointer;"
-       onmouseenter="var v=this.querySelector('video');v.play();v.style.opacity=1;this.querySelector('img').style.opacity=0;"
-       onmouseleave="var v=this.querySelector('video');v.pause();v.currentTime=0;v.style.opacity=0;this.querySelector('img').style.opacity=1;">
-    <img src="../assets/images/case-study-cover.jpg"
+  <div id="cs-video-wrap" style="width:340px;position:relative;border-radius:4px;overflow:hidden;cursor:pointer;">
+    <img id="cs-cover" src="../assets/images/case-study-cover.jpg"
          alt="Global Tech Summit event"
          style="width:100%;height:auto;display:block;border-radius:4px;transition:opacity 0.4s ease;">
-    <video
-      muted
-      loop
-      playsinline
-      style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:4px;opacity:0;transition:opacity 0.4s ease;"
-    >
+    <video id="cs-video" muted loop playsinline
+      style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:4px;opacity:0;transition:opacity 0.4s ease;">
       <source src="../assets/images/case-study-video.mp4" type="video/mp4">
     </video>
   </div>
-  <p style="font-family:var(--font-ui);font-size:12px;color:var(--grey);margin-top:10px;text-align:center;">Hover to play event footage</p>
+  <p style="font-family:var(--font-ui);font-size:12px;color:var(--grey);margin-top:10px;text-align:center;" id="cs-hint">Hover to play event footage</p>
 </div>
-</div>
+
+<script>
+(function() {
+  var wrap = document.getElementById('cs-video-wrap');
+  var video = document.getElementById('cs-video');
+  var cover = document.getElementById('cs-cover');
+  var hint  = document.getElementById('cs-hint');
+  if (!wrap || !video) return;
+
+  var isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+
+  function showVideo() {
+    video.style.opacity = '1';
+    cover.style.opacity = '0';
+  }
+  function hideVideo() {
+    video.style.opacity = '0';
+    cover.style.opacity = '1';
+    video.pause();
+    video.currentTime = 0;
+  }
+
+  if (isTouch) {
+    // Mobile: autoplay when scrolled into view, pause when out
+    hint.textContent = 'Tap to play event footage';
+    var played = false;
+
+    wrap.addEventListener('click', function() {
+      if (!played) {
+        video.play();
+        showVideo();
+        played = true;
+        hint.textContent = 'Tap to stop';
+      } else {
+        hideVideo();
+        played = false;
+        hint.textContent = 'Tap to play event footage';
+      }
+    });
+
+    // Also autoplay via IntersectionObserver when 60% visible
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.intersectionRatio >= 0.6 && !played) {
+            video.play();
+            showVideo();
+            played = true;
+            hint.textContent = 'Tap to stop';
+          }
+        });
+      }, { threshold: 0.6 });
+      obs.observe(wrap);
+    }
+  } else {
+    // Desktop: hover to play
+    wrap.addEventListener('mouseenter', function() {
+      video.play();
+      showVideo();
+    });
+    wrap.addEventListener('mouseleave', function() {
+      hideVideo();
+    });
+  }
+})();
+</script>
 </section>
 
 <section class="section">
