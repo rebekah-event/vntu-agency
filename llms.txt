@@ -1,20 +1,33 @@
-# VNTU Agency — llms.txt
-# https://vntu-events.com
+# VNTU Agency - llms.txt
+# https://vntu-agency.pages.dev
 
-> Bespoke event production agency based in London, UK. Founded by Rebekah Dennis — 9+ years experience across B2B conferences, brand activations, networking dinners and community events.
+> VNTU Agency is a London-based, specialist event production team led by Rebekah Dennis. We deliver B2B conferences, brand activations, networking dinners, pop-up events, webinars, workshops and venue monetisation programmes for SMEs and enterprise organisations across the UK. 9+ years experience. Human-first, AI-assisted production process.
 
 ## Key Pages
-- Homepage: https://vntu-events.com
-- Services: https://vntu-events.com/services.html
-- Case Studies: https://vntu-events.com/case-studies.html
-- About: https://vntu-events.com/about.html
-- Contact: https://vntu-events.com/contact.html
+- Homepage: https://vntu-agency.pages.dev
+- Services: https://vntu-agency.pages.dev/services.html
+- Case Studies: https://vntu-agency.pages.dev/case-studies.html
+- About: https://vntu-agency.pages.dev/about.html
+- Resources & Substack: https://vntu-agency.pages.dev/resources.html
+- Contact: https://vntu-agency.pages.dev/contact.html
+- Privacy Policy: https://vntu-agency.pages.dev/privacy.html
 
 ## Case Studies
-- Global Tech Summit (B2B Conference): https://vntu-events.com/case-studies/global-tech-summit.html
-- Venue Director & Community Engagement: https://vntu-events.com/case-studies/venue-director.html
+- Global Tech Summit (B2B Conference, 4500 attendees, £850K sponsorship revenue): https://vntu-agency.pages.dev/case-studies/global-tech-summit.html
+- Venue Director & Community Engagement (£30K venue revenue, 20K visitors, 25% rebooking rate): https://vntu-agency.pages.dev/case-studies/venue-director.html
+
+## Services
+- Networking Dinners: senior client and sponsor dining experiences
+- Pop-Up Activations: community and brand marketplace events
+- Webinars & Hybrid Events: distributed stakeholder engagement
+- Workshops & Leadership Forums: C-suite roundtables and quarterly formats
+- 90-Day Activation Sprint: venue monetisation programme
+- Market-Entry Package: SME community growth events
+- Event Audit & Rescue: risk control for events in progress
 
 ## Contact
 - Email: rebekah@vntu-events.com
 - Phone: +447572680442
 - Location: London, UK
+- LinkedIn: https://www.linkedin.com/in/rebekah-dennis8388/
+- Substack: https://rebekahdennis.substack.com
