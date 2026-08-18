@@ -9,6 +9,8 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Rebekah Dennis","jobTitle":"Event Director & Production Specialist","worksFor":{"@type":"Organization","name":"VNTU Agency"},"email":"rebekah@vntu-events.com","telephone":"+447572680442","address":{"@type":"PostalAddress","addressLocality":"London","addressCountry":"GB"},"description":"Freelance Event Director and Production Specialist with 9+ years experience in B2B conferences, brand activations, stakeholder engagement and venue-led community events.","knowsAbout":["Event Production","Conference Management","Brand Activations","VIP Engagement","Venue Sourcing","Stakeholder Management"]}</script>
 </head>
@@ -92,6 +94,14 @@
     <div class="footer__bottom"><p class="footer__copy">© 2026 VNTU Agency. All rights reserved.</p></div>
   </div>
 </footer>
+
+<!-- P0-3: Cookie Consent Banner -->
+<div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:#111;border-top:1px solid #2A2A2A;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;z-index:999;font-family:var(--font-ui);font-size:13px;color:var(--grey);">
+  <p style="margin:0;">This site uses Google Fonts for typography. No tracking cookies are set. <a href="privacy.html" style="color:var(--teal);">Privacy Policy</a></p>
+  <button onclick="document.getElementById('cookie-banner').style.display='none';localStorage.setItem('cookies-ok','1')" style="background:var(--teal);color:#000;border:none;padding:10px 20px;border-radius:4px;font-family:var(--font-ui);font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;white-space:nowrap;">Got It</button>
+</div>
+<script>if(localStorage.getItem('cookies-ok'))document.getElementById('cookie-banner').style.display='none';</script>
+
 <script src="js/main.js"></script>
 </body>
 </html>
