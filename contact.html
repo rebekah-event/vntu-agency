@@ -33,8 +33,7 @@
     <h1 style="font-size:clamp(36px,6vw,64px);margin-bottom:16px;">Let's Build Something Extraordinary.</h1>
     <p style="font-family:var(--font-ui);font-size:18px;color:var(--grey);margin-bottom:64px;max-width:480px;">Tell us about your event. We'll come back with how we'd approach it - no obligation.</p>
     <div class="contact__grid">
-      <form class="contact__form" name="contact" id="contact-form" method="POST" action="thanks.html">
-        <input type="hidden" name="form-name" value="contact">
+      <form class="contact__form" name="contact" id="contact-form" method="POST" action="https://formspree.io/f/mjybpaol">
         <div class="contact__form-group">
           <label class="contact__label" for="name">Your Name</label>
           <input class="contact__input" type="text" id="name" name="name" required placeholder="Rebekah Dennis">
@@ -106,10 +105,26 @@
     var btn = form.querySelector('button[type="submit"]');
     btn.textContent = 'Sending...';
     btn.disabled = true;
-    // Simulate brief send then redirect to thanks page
-    setTimeout(function(){
-      window.location.href = 'thanks.html';
-    }, 600);
+    var data = new FormData(form);
+    fetch('https://formspree.io/f/mjybpaol', {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function(res){
+      if(res.ok){
+        window.location.href = 'thanks.html';
+      } else {
+        btn.textContent = 'Something went wrong - please email us directly';
+        btn.disabled = false;
+        btn.style.background = '#c0392b';
+      }
+    })
+    .catch(function(){
+      btn.textContent = 'Something went wrong - please email us directly';
+      btn.disabled = false;
+      btn.style.background = '#c0392b';
+    });
   });
 })();
 </script>
